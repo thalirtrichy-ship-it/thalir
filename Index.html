@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Darzi — Tailor Management</title>
+<title>Thalir — Personalized Tailoring</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
@@ -393,7 +393,7 @@
 <!-- SIDEBAR -->
 <nav id="sidebar">
   <div class="sidebar-brand">
-    <div class="brand-name serif">Darzi</div>
+    <div class="brand-name serif">Thalir</div>
     <div class="brand-sub">Tailor Management</div>
   </div>
   <div class="nav-section">
@@ -414,7 +414,7 @@
       <i class="fas fa-sliders-h"></i> Settings
     </div>
   </div>
-  <div class="sidebar-bottom">Darzi v1.0 · Local storage</div>
+  <div class="sidebar-bottom">Thalir v1.0 · Local storage</div>
 </nav>
 
 <!-- MAIN -->
@@ -685,10 +685,10 @@
 // ── DATA LAYER ──
 const DB = {
   get(key, def) {
-    try { const v = localStorage.getItem('darzi_' + key); return v ? JSON.parse(v) : def; }
+    try { const v = localStorage.getItem('Thalir_' + key); return v ? JSON.parse(v) : def; }
     catch(e) { return def; }
   },
-  set(key, val) { localStorage.setItem('darzi_' + key, JSON.stringify(val)); }
+  set(key, val) { localStorage.setItem('Thalir_' + key, JSON.stringify(val)); }
 };
 
 let orders = DB.get('orders', []);
@@ -1306,7 +1306,7 @@ function exportData() {
   const blob = new Blob([data], { type: 'application/json' });
   const a = document.createElement('a');
   a.href = URL.createObjectURL(blob);
-  a.download = 'darzi-backup-' + today() + '.json';
+  a.download = 'Thalir-backup-' + today() + '.json';
   a.click();
 }
 
